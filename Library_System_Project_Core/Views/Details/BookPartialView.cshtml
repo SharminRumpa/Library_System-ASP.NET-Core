@@ -1,0 +1,75 @@
+﻿@model Library_System_Project_Core.Data.SelectedDetailsModel
+
+<br />
+<h2 class="text-center">Department Wise Book List</h2>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>
+                Department Name
+            </th>
+            <th>
+                BooksType
+            </th>
+            <th>
+                Book Title
+            </th>
+            <th>
+                Author Name
+            </th>
+            <th>
+                ISBN
+            </th>
+            <th>
+                NoOfPage
+            </th>
+            <th>
+                ImageUrl
+            </th>
+
+            <th>
+                Publisher Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model.Book)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departments.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTypes.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoOfPage)
+            </td>
+            <td>
+                <img src="@Url.Content(item.ImageUrl)" width="120" height="120" class="rounded" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher.Name)
+            </td>
+            <td>
+                @*<a href="@Url.Action("Index", "Details", new { BookID = item.BookID })" class="btn btn-secondary btn-sm mr-1">Select</a>*@
+                <a href="@Url.Action("Edit", "Books", new { id = item.BookID })" class="btn btn-secondary btn-sm mr-1"><i class="fa fa-edit"></i></a>
+                <a href="@Url.Action("Details", "Books", new { id = item.BookID })" class="btn btn-secondary btn-sm mr-1"><i class=" fa fa-bars"></i></a>
+                <a href="@Url.Action("Delete", "Books", new { id = item.BookID })" class="btn btn-secondary btn-sm mr-1"><i class=" fa fa-trash"></i></a>
+            </td>
+        </tr>
+    }
+
+
+</table>
+

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "RollCreate";
+}
+<br />
+
+<h2 class="text-center">Create New Roll</h2>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <form asp-action="RollCreate" asp-controller="Account" method="post">
+                <div class="form-group">
+                    <label>Role Name</label>
+                    <input type="text" class="form-control" id="RollName" name="RollName" placeholder="Enter Roll Name">
+                </div>
+                <div class="form-check">
+                    <button class="btn btn-info" type="reset">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

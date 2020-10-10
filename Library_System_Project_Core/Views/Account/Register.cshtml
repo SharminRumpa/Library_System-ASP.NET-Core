@@ -1,0 +1,62 @@
+﻿@model Library_System_Project_Core.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<style>
+
+    body {
+        background-image: url('../images/home/best-sky-image.jpg');
+    }
+
+    #log {
+        background-color: #2989dcf2;
+        border-radius: 15px;
+    }
+</style>
+
+<br /><br />
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div id="log" class="col-md-8">
+        <div class="top-buffer"></div>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <section>
+                    <form asp-action="Register" asp-controller="Account" method="post">
+                        <h2>- - - Register New User - - - </h2>
+                        <hr />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter you provided email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="YouAre" class="control-label"></label>
+                            <select asp-for="YouAre" asp-items="Html.GetEnumSelectList<YouAre>()" class="form-control">
+                                <option selected="selected" value="">You are Student, Teacher or Staff ?</option>
+                            </select>
+                            <span asp-validation-for="YouAre" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" class="form-control" placeholder="Password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn">Sing Up</button>
+                            </div>
+                        </div>
+                        <br />
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+

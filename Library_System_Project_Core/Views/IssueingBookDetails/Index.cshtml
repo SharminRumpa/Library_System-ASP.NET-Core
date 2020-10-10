@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Library_System_Project_Core.Models.IssueingBookDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+
+<h2 class="text-center">Book Issu List</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Books)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teachers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Borrow_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Return_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actual_Return_Date)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Books.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teachers.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Staffs.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Borrow_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Return_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Actual_Return_Date)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SerialID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SerialID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SerialID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+﻿@using Library_System_Project_Core.Models
+@model LoginViewModel
+<style>
+    body {
+        background-image: url('../images/home/best-sky-image.jpg');
+  
+    }
+
+    #log {
+        background-color: #2989dcf2;
+        border-radius: 15px;
+    }
+</style>
+
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div id="log" class="col-md-8">
+        <div class="top-buffer"></div>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <section>
+                    <form asp-controller="Account" asp-action="Login" method="post" class="form-horizontal">
+                        <h2>- - -  Sing In  - - -</h2>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Email" name="userName" class="form-control" placeholder="Enter your email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="col-md-2 control-label"></label>
+                            <div class="col-md-10">
+                                <input asp-for="Password" class="form-control" placeholder="Enter you Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    <label asp-for="RememberMe">
+                                        <input asp-for="RememberMe" />
+                                        @Html.DisplayNameFor(m => m.RememberMe)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <button type="submit" class="btn"><i class='fa fa-sign-in' style='font-size:25px;color:white'></i>  Sing In</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+

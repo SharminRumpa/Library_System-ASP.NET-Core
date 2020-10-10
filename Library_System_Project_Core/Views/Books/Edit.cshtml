@@ -1,0 +1,83 @@
+﻿@model Library_System_Project_Core.Models.Book
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BookID" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label"></label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NoOfPage" class="control-label"></label>
+                <input asp-for="NoOfPage" class="form-control" />
+                <span asp-validation-for="NoOfPage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <img src="@Url.Content(Model.ImageUrl)" width="100" height="100" />
+                <input name="formFile" type="file" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publish_Year" class="control-label"></label>
+                <input asp-for="Publish_Year" class="form-control" />
+                <span asp-validation-for="Publish_Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsAvailableForBorrow" /> @Html.DisplayNameFor(model => model.IsAvailableForBorrow)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author.FullName" class="control-label"></label>
+                <select asp-for="AuthorID" class="form-control" asp-items="ViewBag.AuthorID"></select>
+                <span asp-validation-for="AuthorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Departments.Name" class="control-label"></label>
+                <select asp-for="DepartmentID" class="form-control" asp-items="ViewBag.DepartmentID">
+                    <option selected="selected" value="">Please select DepartmentID if book belongs to department</option>
+                </select>
+                <span asp-validation-for="DepartmentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BooksTypeID" class="control-label"></label>
+                <select asp-for="BooksTypeID" class="form-control" asp-items="ViewBag.BooksTypeID">
+                    <option selected="selected" value="">Please select BooksTypeID if book don't belongs to department</option>
+                </select>
+                <span asp-validation-for="BooksTypeID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublisherID" class="control-label"></label>
+                <select asp-for="PublisherID" class="form-control" asp-items="ViewBag.PublisherID"></select>
+                <span asp-validation-for="PublisherID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

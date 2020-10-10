@@ -1,0 +1,63 @@
+﻿@model Library_System_Project_Core.Models.IssueingBookDetails
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>IssueingBookDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Borrow_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Borrow_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Return_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Return_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Actual_Return_Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Actual_Return_Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Books)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Books.ISBN)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Students)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Students.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Teachers)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Teachers.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Staffs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Staffs.Address)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="SerialID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    body{
+        background-color: #333;
+        color:white;
+    }
+</style>
+<div class="container-lg mt-2">
+    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="3000">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+            <li data-target="#demo" data-slide-to="4"></li>
+            <li data-target="#demo" data-slide-to="5"></li>
+            <li data-target="#demo" data-slide-to="6"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Images/Home/ecopetit.cat-full-hd-wallpaper-7459.png" alt="Los Angeles" width="1200" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/thumb_26.jpg" alt="New York" width="1200" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/images.jpg" alt="Chicago" width="1200" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/ws_Vintage_Library_1920x1080.jpg" alt="Chicago" width="1200" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/library-mv.jpg" alt="New York" width="1200" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/public_library.jpg" alt="New York" width="1200" height="500">
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/Home/Graduation.jpg" alt="New York" width="1200" height="500">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+
+<br />
+
+<partial name="_ImagePartialView" />
+
+
+
+
+
+
+

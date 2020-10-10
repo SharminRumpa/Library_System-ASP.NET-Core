@@ -1,0 +1,38 @@
+﻿@model ViewDropDown
+@{
+    ViewData["Title"] = "RollMappingToUserList";
+}
+
+<br />
+<br />
+
+<h2 class="text-center">Roll Mapping To User</h2>
+
+<hr />
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-controller="Account" asp-action="RollMappingToUserList">
+                <div class="form-group">
+                    User :
+                    <select class="col-md-8" name="UserName"
+                            asp-items="@(new SelectList(Model.DropDownListValues, "Id", "Name"))">
+                        <option selected="selected" value="">Select user......</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
