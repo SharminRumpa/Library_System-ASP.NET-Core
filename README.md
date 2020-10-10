@@ -5,15 +5,15 @@
    * __Project Name :__ Library Management System
    * __Project Description :__  
         * Windows Authentication
-		    * Code First
-		    * Crud Operation with Image
-		    * Sorting, Filtering, and Paging
+        * Code First
+        * Crud Operation with Image
+        * Sorting, Filtering, and Paging
 
 ### Tools and Technologies: 
    * EntityFramework
-	 * PagedList
-	 * Bootstrap
-	 * jQuery 3.3.1
+   * PagedList
+   * Bootstrap
+   * jQuery 3.3.1
    * Microsoft Visual Studio 2019	
    * SQL Server Management Studio 2018 (Build number: 15.0.18206.0)
 	 
